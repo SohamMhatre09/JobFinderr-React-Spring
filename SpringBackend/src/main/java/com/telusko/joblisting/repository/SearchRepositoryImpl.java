@@ -1,6 +1,5 @@
 package com.telusko.joblisting.repository;
 
-import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -13,10 +12,10 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import java.util.regex.Pattern;
 
 @Component
-public class SearchRepositoryImpl implements SearchRepository{
+public class SearchRepositoryImpl implements SearchRepository {
 
     @Autowired
     MongoClient client;
@@ -26,21 +25,25 @@ public class SearchRepositoryImpl implements SearchRepository{
 
     @Override
     public List<Post> findByText(String text) {
-
         final List<Post> posts = new ArrayList<>();
 
         MongoDatabase database = client.getDatabase("telusko");
         MongoCollection<Document> collection = database.getCollection("JobPost");
 
-        AggregateIterable<Document> result = collection.aggregate(Arrays.asList(new Document("$search",
-                        new Document("text",
-                        new Document("query", text)
-                        .append("path", Arrays.asList("techs", "desc", "profile")))),
-                        new Document("$sort",
-                        new Document("exp", 1L)),
-                        new Document("$limit", 5L)));
+        // Construct the regular expression pattern for case-insensitive search
+        Pattern pattern = Pattern.compile("^.*" + text + ".*$", Pattern.CASE_INSENSITIVE);
 
-        result.forEach(doc -> posts.add(converter.read(Post.class,doc)));
+        // Construct the query to search across all fields
+        Document query = new Document("$or",
+                Arrays.asList(
+                        new Document("techs", pattern),
+                        new Document("desc", pattern),
+                        new Document("profile", pattern)
+                )
+        );
+
+        // Execute the query and iterate over the results
+        collection.find(query).limit(5).forEach(doc -> posts.add(converter.read(Post.class, doc)));
 
         return posts;
     }

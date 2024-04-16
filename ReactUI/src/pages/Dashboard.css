@@ -1,0 +1,49 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .heading {
+    margin: 2%;
+  }
+  
+  .link-button {
+    color: #3182ce;
+    text-decoration: none;
+  }
+  
+  .link-button:hover {
+    text-decoration: underline;
+  }
+  
+  .tab-label {
+    color: #4a5568;
+  }
+  
+  .tab-label:hover {
+    color: #3182ce; 
+  }
+  
+  .tab-list {
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .dashboard-container {
+    padding: 20px;
+  }
+  
+  .heading {
+    margin-bottom: 20px;
+  }
+  
+  .link-button {
+    text-decoration: none;
+  }
+  
+  .tab-list {
+    margin-top: 20px;
+  }
+  

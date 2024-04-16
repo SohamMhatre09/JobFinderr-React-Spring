@@ -3,6 +3,7 @@ import { Box, Tab, Typography, Button } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { Link } from 'react-router-dom';
 import Create from './Create';
+import './Dashboard.css'
 
 export default function Home() {
   const [value, setValue] = useState('1');
@@ -13,17 +14,17 @@ export default function Home() {
 
   return (
     <>
-      <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
-        <Typography variant="h3" sx={{ margin: '2%' }} align="center">
+      <Box className='container'>
+        <Typography variant="h3" className='heading'>
           EMPLOYER DASHBOARD
         </Typography>
         <Button variant="outlined">
-          <Link to="/">Home</Link>
+          <Link to="/" className='link-button'>Home</Link>
         </Button>
       </Box>
       <Box sx={{ width: '100%' }}>
         <TabContext value={value}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Box className='tab-list'>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
               <Tab label="Create Post" value="1" />
             </TabList>

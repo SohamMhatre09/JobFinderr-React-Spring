@@ -1,31 +1,25 @@
-import React from "react";
-import { Typography, Button } from "@mui/material";
-import { Link } from "react-router-dom";
-import "../App.css"
+import React from 'react';
+import { Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import './Home.css'; // Import external CSS file
 
 const Home = () => {
   return (
-    <div>
-      <Typography sx={{ margin:"5%" }} variant="h3" align="center">
-        Get Hired or Hire people for free!
+    <div className="container">
+      <Typography variant="h3" className="heading">
+        Get Hired or Hire People for Free!
       </Typography>
-      <div>
-        <ul className="ul">
-          <li>
-          <Button sx={{ margin:"2% 3%"}} variant="outlined">
-            <Link to="/employer/dashboard">
-              Hire talent
-            </Link>
-            </Button>
-          </li>
-          <li>
-          <Button sx={{ margin:"2% 3%"}} variant="outlined">
-            <Link to="/employee/feed">
-              Get Job Now
-            </Link>
-            </Button>
-          </li>
-        </ul>
+      <div className="flex gap-4">
+        <Button variant="outlined" className="button">
+          <Link to="/employer/dashboard" className="link">
+            Hire Talent
+          </Link>
+        </Button>
+        <Button variant="outlined" className="button">
+          <Link to="/employee/feed" className="link">
+            Get Job Now
+          </Link>
+        </Button>
       </div>
     </div>
   );

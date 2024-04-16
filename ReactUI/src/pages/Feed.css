@@ -1,0 +1,93 @@
+body {
+    background-repeat: no-repeat;
+    background: #7F7FD5; 
+background: -webkit-linear-gradient(to top, #91EAE4, #86A8E7, #7F7FD5); 
+background: linear-gradient(to top, #91EAE4, #86A8E7, #7F7FD5);
+}
+
+.container {
+    margin: 2%;
+  }
+  
+  .searchBar {
+    width: 75%;
+    padding: 2% auto;
+  }
+  
+  .card {
+    padding: 3%;
+    overflow: hidden;
+    width: 84%;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .postTitle {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .description {
+    color: #585858;
+    margin-top: 0.5rem;
+  }
+  
+  .skillsTitle {
+    margin-top: 1rem;
+  }
+  
+  .skill {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    background-color: #edf2f7;
+    color: #2d3748;
+    font-size: 0.875rem;
+  }
+/* Styles for post title */
+.postTitle {
+  font-size: 1.2rem; /* Example font size */
+  font-weight: bold; /* Example font weight */
+  color: #333; /* Example text color */
+  margin-bottom: 10px; /* Example margin bottom */
+}
+
+/* Styles for description */
+.description {
+  font-size: 1rem; /* Example font size */
+  color: #555; /* Example text color */
+  margin-bottom: 10px; /* Example margin bottom */
+}
+
+/* Styles for skills title */
+.skillsTitle {
+  font-size: 1rem; /* Example font size */
+  font-weight: bold; /* Example font weight */
+  color: #333; /* Example text color */
+  margin-bottom: 5px; /* Example margin bottom */
+}
+
+/* Styles for individual skill */
+.skill {
+  display: inline-block; /* Display skills in a line */
+  font-size: 0.9rem; /* Example font size */
+  color: #888; /* Example text color */
+  margin-right: 5px; /* Example margin right */
+  margin-bottom: 5px; /* Example margin bottom */
+  padding: 3px 8px; /* Example padding */
+  border-radius: 5px; /* Example border radius */
+  background-color: #f0f0f0; /* Example background color */
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.5); /* 50% opaque white */
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
